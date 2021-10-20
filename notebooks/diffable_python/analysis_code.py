@@ -62,7 +62,7 @@ fig, ax = plt.subplots(figsize = (18,8), dpi=300)
 pd.Series(r_dict).plot(lw=4, marker='.', markersize=13, grid=True, ax=ax)
 
 ax.set_yticks(range(0,90, 10))
-ax.tick_params(axis='both', labelsize=16)
+ax.tick_params(axis='both', labelsize=17)
 
 #Optional annotations
 #ax.annotate('EU TrialsTracker\nLaunched', xy=('2018-09-12', 51), xytext=(pd.Timestamp('2018-09-12'),60), 
@@ -74,8 +74,8 @@ ax.tick_params(axis='both', labelsize=16)
 #ax.annotate('EC/EMA/HMA Joint Letter', xy=('2019-06-01', 57), xytext=(pd.Timestamp('2019-06-10'),70), 
 #            arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
 
-plt.ylabel('Percent of Due Trials Reported', fontsize=19)
-plt.title('Trend in Results Reporting to the EU-CTR Over Time', pad=10, fontsize=22)
+plt.ylabel('Percent of Due Trials Reported', fontsize=20, labelpad=10)
+plt.title('Trend in Results Reporting to the EU-CTR Over Time', pad=10, fontsize=24)
 plt.xticks([0,5,10,15,20,25,30,35,40],
           ['Jan 2018', 'Jun 2018', 'Nov 2018', 'Apr 2019', 'Sep 2019', 'Feb 2020', 'Jul 2020', 'Dec 2020', 'May 2021'])
 
@@ -83,7 +83,7 @@ counter = 0
 annotations = [0, 4, 9, 14, 19, 24, 29, 33]
 for a, b in zip(r_dict.keys(), r_dict.values()):
     if counter in annotations:
-        ax.annotate(b, (a-.425, b-3.75), fontsize=16)
+        ax.annotate(b, (a-.425, b-4), fontsize=18)
         counter+=1
     else:
         counter+=1
@@ -282,5 +282,6 @@ increase_df_count.sort_values(by='delta', ascending=False).head(6)
 
 
 
+# +
 
 
